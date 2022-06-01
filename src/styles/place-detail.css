@@ -71,11 +71,14 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 26px;
+  z-index: 0;
+  cursor: pointer;
 }
 .tab.selected {
   width: 60%;
   color: #ffffff;
   background: #134b8a;
+  z-index: 1;
 }
 
 .tab.information {
