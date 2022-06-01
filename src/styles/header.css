@@ -6,7 +6,7 @@ header {
   background: #134b8a;
   position: fixed;
   width: 100%;
-  z-index: 100000;
+  z-index: 1;
 }
 .header-title {
   margin-left: 20px;
