@@ -37,6 +37,9 @@
   line-height: 143%;
   color: rgba(0, 0, 0, 0.54);
 }
+.dropdown-button:hover {
+  background: #ffffff;
+}
 
 .show {
   display: block;

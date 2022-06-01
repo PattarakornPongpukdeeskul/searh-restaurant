@@ -45,9 +45,17 @@ main {
 a:hover {
   color: #134b8a;
 }
+
+button:disabled,
+button:hover:disabled {
+  background: #c3bebb;
+}
+button:hover {
+  background: #0f1e56;
+}
 @media screen and (max-width: 551px) {
   main {
     margin: 0px 9px;
-    padding: 60px 0px 0;
+    padding: 65px 0px 0;
   }
 }

@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  search-restaurant:
+    container_name: search-restaurant
+    image: search-restaurant
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    tty: true
+    volumes:
+      - ./:/app

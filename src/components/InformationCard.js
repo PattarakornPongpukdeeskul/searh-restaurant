@@ -8,7 +8,7 @@ import '../styles/information-card.css'
 export const InformationCard = () => {
   const selectedIdPlace = useRecoilValue(placeSelectedId)
   const place = mockData.filter((place) => place.id === selectedIdPlace)[0]
-  console.log(place)
+
   return (
     <div className="information-card">
       <img className="image" src={place.profile_image_url} />
@@ -24,13 +24,13 @@ export const InformationCard = () => {
         </div>
         <div className="information-card-main">
           <div>
-            <div>
-              <div>Address : </div>
+            <div className="information-card-main-address">
+              <div className="address">Address : </div>
               <div>{place.address}</div>
             </div>
-            <div>
-              <div>Opening Hour : </div>
-              <div>
+            <div className="information-card-main-operation-time">
+              <div className="open-hour">Opening Hour : </div>
+              <div className="operation-time-group">
                 {place.operation_time.map((time) => {
                   return (
                     <span

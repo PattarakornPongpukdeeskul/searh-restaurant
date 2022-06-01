@@ -1,19 +1,26 @@
 import { useState } from 'react'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useSetRecoilState } from 'recoil'
 
 import { ReactComponent as IconDropdown } from '../asset/svg/icon-dropdown.svg'
-import { showPlaceCategories } from '../recoil/atom.js'
+import { showPlaceCategories, searchState } from '../recoil/atom'
 import '../styles/select.css'
 
 export const Select = () => {
   const [showOption, setShowOption] = useState('hide')
   const [showPlaceCategory, setShowPlaceCategory] = useRecoilState(showPlaceCategories)
-  const allCategory = ['Restaurant', 'Bakery', 'Cafe']
+  const allCategory = ['Restaurant', 'Bakery', 'Cafe', 'All']
+  const setSearch = useSetRecoilState(searchState)
+
   const selectCategory = (category) => {
     setShowPlaceCategory((prevState) => ({
       ...prevState,
       value: category
     }))
+
+    if (category === 'All') {
+      setSearch('')
+    }
+
     if (showOption === 'hide') {
       setShowOption('show')
     } else {

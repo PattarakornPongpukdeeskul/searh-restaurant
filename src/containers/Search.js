@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilState, useSetRecoilState } from 'recoil'
 
-import { showPlaceCategories } from '../recoil/atom.js'
+import { showPlaceCategories, searchState, paginationState } from '../recoil/atom'
 import { ReactComponent as IconSearch } from '../asset/svg/icon-search.svg'
 import '../styles/search.css'
 
 export const Search = () => {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useRecoilState(searchState)
   const setShowPlace = useSetRecoilState(showPlaceCategories)
+  const setPagination = useSetRecoilState(paginationState)
+
   const submitSearch = () => {
     setShowPlace((prevState) => ({
       ...prevState,
       isSearch: true,
       valueSearch: search
     }))
+    setPagination(1)
   }
 
   return (

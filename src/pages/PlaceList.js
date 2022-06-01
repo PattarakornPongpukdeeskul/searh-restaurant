@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import { useRecoilValue } from 'recoil'
+import { useRecoilValue, useRecoilState } from 'recoil'
 
-import { showPlaceCategories } from '../recoil/atom.js'
+import { showPlaceCategories, paginationState } from '../recoil/atom'
 import { Card } from '../components'
 import { Search, Select } from '../containers'
 import { mockData } from '../mock/example_data'
@@ -11,17 +10,17 @@ import { ReactComponent as IconArrowNext } from '../asset/svg/icon-arrow-next.sv
 import '../styles/place-list.css'
 
 export const PlaceList = () => {
-  const [pagination, setPagination] = useState(1)
+  const [pagination, setPagination] = useRecoilState(paginationState)
   const showPlaceCategory = useRecoilValue(showPlaceCategories)
   const filterCategory = (arrayData) => {
+    if (showPlaceCategory.value.toLowerCase() === 'all') {
+      return mockData
+    }
+
     return arrayData.filter((data) =>
       data.categories.includes(showPlaceCategory.value.toLowerCase())
     )
   }
-
-  // const mockDataFilter = mockData.filter((data) =>
-  //   data.categories.includes(showPlaceCategory.value.toLowerCase())
-  // )
 
   const mockDataSearch = mockData.filter((data) =>
     data.name.toLowerCase().includes(showPlaceCategory.valueSearch.toLowerCase())
@@ -83,7 +82,7 @@ export const PlaceList = () => {
         <button
           className="button-pagination"
           onClick={() => setPagination(pagination + 1)}
-          disabled={pagination === Math.floor(mockDataUsed.length / 9) + 1 ? true : false}>
+          disabled={pagination === Math.ceil(mockDataUsed.length / 9) ? true : false}>
           <IconArrowNext />
         </button>
       </div>

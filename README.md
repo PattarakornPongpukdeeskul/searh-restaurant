@@ -1,6 +1,30 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was about searching restaurant
+
+## For development with Docker
+
+please run
+
+### `make build`
+
+to build docker image
+
+### `make start`
+
+to start docker container
+
+### `make stop`
+
+to stop docker container
+
+## For development with npm
+
+please run
+
+### `npm install`
+
+### `npm start`
 
 ## Available Scripts
 

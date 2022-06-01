@@ -21,3 +21,15 @@ export const showPlaceCategories = atom({
   },
   effects_UNSTABLE: [persistAtom]
 })
+
+export const searchState = atom({
+  key: 'searchState',
+  default: '',
+  effects_UNSTABLE: [persistAtom]
+})
+
+export const paginationState = atom({
+  key: 'paginationState',
+  default: 1,
+  effects_UNSTABLE: [persistAtom]
+})

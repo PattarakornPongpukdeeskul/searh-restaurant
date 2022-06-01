@@ -12,9 +12,8 @@ import '../styles/card.css'
 export const Card = ({ id, name, time, profileImage, rating, images }) => {
   const [slider, setSlider] = useState(0)
   const setSelectedId = useSetRecoilState(placeSelectedId)
-  console.log('slider', slider)
+
   const slideNext = () => {
-    console.log('tessssssss')
     if (slider === 0) {
       setSlider(1)
     }

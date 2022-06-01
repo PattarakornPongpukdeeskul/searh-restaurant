@@ -154,6 +154,6 @@ a {
     right: 90%;
   }
   .image-foods-mobile .button-pagination svg {
-    transform: scale(4)
+    transform: scale(4);
   }
 }
