@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+main {
+  margin-left: 90px;
+  margin-right: 0px;
+  padding: 60px 40px 0;
+}
+
+@media screen and (max-width: 551px) {
+  main {
+    margin: 0px 9px;
+    padding: 60px 0px 0;
+  }
+}

@@ -1,0 +1,15 @@
+.information-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  height: fit-content;
+}
+
+.information-card .image {
+  width: 677px;
+  height: 380.44px;
+}
+
+.information-card-content {
+  padding: 23.5px 18px 57px 24px;
+}

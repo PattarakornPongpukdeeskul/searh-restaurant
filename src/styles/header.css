@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  background: #134b8a;
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
+}
+.header-title {
+  margin-left: 20px;
+  font-size: 32px;
+  font-weight: 600;
+}
+.header-content {
+  display: flex;
+  column-gap: 11.5px;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  padding-right: 41.5px;
+}
+.icon-profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-image: url(../asset/image/profile.png);
+}
+
+.user-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: #ffffff;
+  letter-spacing: 0.1px;
+}
+@media screen and (max-width: 500px) {
+  .header-title {
+    font-size: 24px;
+  }
+}
